@@ -2,22 +2,22 @@ package com.mmlogistica.designpatternsjava.service;
 
 
 import com.mmlogistica.designpatternsjava.model.Cliente;
-import org.springframework.stereotype.Service;
 /**
- * Implementação da <b>Strategy</b> {@link ClienteService}, a qual pode ser
- * injetada pelo Spring (via {@link Autowired}). Com isso, como essa classe é um
- * {@link Service}, ela será tratada como um <b>Singleton</b>.
+ * Interface que define o padrão <b>Strategy</b> no domínio de cliente. Com
+ * isso, se necessário, podemos ter multiplas implementações dessa mesma
+ * interface.
  *
  * @author isaias3silva
  */
 
 
-@Service
+
 public interface ClienteService {
     Iterable<Cliente> buscarTodos();
-    Cliente BuscarPorId(Long id);
+    Cliente buscarPorId(Long id);
     void inserir(Cliente cliente);
     void atualizar(Long id, Cliente cliente);
     void deletar(Long id);
+
 
 }
